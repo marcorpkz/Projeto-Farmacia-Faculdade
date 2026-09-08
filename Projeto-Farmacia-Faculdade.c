@@ -3,7 +3,7 @@
 int main() {
     char nome[100], cpf[20], nascimento[20];
     int opcao, opcaocarrinho, produto, quantidade, pagamento;
-    int dipirona = 1, vitamina = 0, sabonete = 0, shampoo = 0;
+    int dipirona = 0, vitamina = 0, sabonete = 0, shampoo = 0;
     int promocao;
     float total;
 
@@ -64,6 +64,25 @@ int main() {
                     }
             }
             
+        }
+
+        if (opcao == 2) {
+            printf("\n===== LOJA =====\n");
+                printf("1 - Dipirona - R$ 8.50\n2 - Vitamina C - R$ 20.00\n");
+                printf("3 - Sabonete - R$ 4.00\n4 - Shampoo - R$ 15.00\n0 - Voltar\n");
+                printf("\nQual produto deseja adicionar? ");
+                scanf("%d", &produto);
+                if (produto >= 1 && produto <= 4) {
+                    printf("Quantidade: ");
+                    scanf("%d", &quantidade);
+                    if (quantidade > 0) {
+                        if (produto == 1) dipirona = dipirona + quantidade;
+                        else if (produto == 2) vitamina = vitamina + quantidade;
+                        else if (produto == 3) sabonete = sabonete + quantidade;
+                        else if (produto == 4) shampoo = shampoo + quantidade;
+                        printf("Produto adicionado ao carrinho!\n");
+                    } else printf("Quantidade invalida.\n");
+                } else if (produto != 0) printf("Produto invalido.\n");
         }
         
     } while (opcao != 4);
