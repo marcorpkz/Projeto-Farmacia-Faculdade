@@ -18,15 +18,24 @@ int main() {
 
     do {
         printf("\n===== FARMACIA =====\n");
-        printf("1 - Ver carrinho\n2 - Loja\n3 - Ver promocao do dia\n4 - Sair\n");
+            if (promocao > 0) {
+                if (promocao == 1) printf("")
+                else if (promocao == 2) {printf("")}
+                else if (promocao == 3) {printf("")}
+                else if (promocao == 4) {printf("")}
+                else if (promocao == 5) {printf("")}
+                else if (promocao == 6) {printf("")}
+                else if (promocao == 7) {printf("")}
+            }
+        printf("1 - Ver carrinho\n2 - Loja\n3 - Sair\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
-        if (opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4) {
+        if (opcao != 1 && opcao != 2 && opcao != 3) {
             printf("\nOpcao invalida. Tente novamente.\n");
         }
 
-        if (opcao == 4) {
+        if (opcao == 3) {
             printf("\nVolte sempre, %s!\n", nome);
             break;
         }
@@ -85,7 +94,7 @@ int main() {
                 } else if (produto != 0) printf("Produto invalido.\n");
         }
         
-    } while (opcao != 4);
+    } while (opcao != 3);
 
     return 0;
 }
