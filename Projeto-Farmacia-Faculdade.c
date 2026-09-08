@@ -19,13 +19,13 @@ int main() {
     do {
         printf("\n===== FARMACIA =====\n");
             if (promocao > 0) {
-                if (promocao == 1) printf("")
-                else if (promocao == 2) {printf("")}
-                else if (promocao == 3) {printf("")}
-                else if (promocao == 4) {printf("")}
-                else if (promocao == 5) {printf("")}
-                else if (promocao == 6) {printf("")}
-                else if (promocao == 7) {printf("")}
+                if (promocao == 1) {printf("");}
+                else if (promocao == 2) {printf("");}
+                else if (promocao == 3) {printf("");}
+                else if (promocao == 4) {printf("");}
+                else if (promocao == 5) {printf("");}
+                else if (promocao == 6) {printf("");}
+                else if (promocao == 7) {printf("");}
             }
         printf("1 - Ver carrinho\n2 - Loja\n3 - Sair\n");
         printf("\nEscolha uma opcao: ");
