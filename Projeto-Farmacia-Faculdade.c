@@ -4,14 +4,14 @@
 
 int main() {
     char nome[100], cpf[20], nascimento[20];
-    int opcao, opcaocarrinho, produto, quantidade, pagamento, voltar;
+    int opcao, opcaocarrinho, produto, quantidade, pagamento;
     int dipirona = 0, vitamina = 0, sabonete = 0; 
     int shampoo = 0, camisinha = 0;
     int tadala = 0, DIU = 0, antiaids = 0; 
     int lactopurga = 0, coca = 0;
     int promocao;
     float total;
-    float gastos;
+    float gastos = 0;
 
     printf("===== CADASTRO =====\n");
     printf("Digite seu nome completo: ");
@@ -52,50 +52,44 @@ int main() {
         
         if (opcao == 1) {
             printf("\n===== CARRINHO =====\n");
-            total = total = (dipirona * 8.50) + 
-                            (vitamina * 20.00) + 
-                            (sabonete * 4.00) + 
-                            (shampoo * 15.00) + 
-                            (camisinha * 5.00) + 
-                            (tadala * 25.00) + 
-                            (DIU * 50.00) + 
-                            (antiaids * 15.00) + 
-                            (lactopurga * 10.00) + 
-                            (coca * 50.00);
-                            if (promocao == 1 && tadala > 0) {
-                                total = total - (tadala * 25.00 * 0.50);
-                                printf("\nDesconto da promocao aplicado para Tadalafila!\n");
-                            }
-
-                            if (promocao == 2 && camisinha > 0) {
-                                total = total - (camisinha * 5.00 * 0.50);
-                                printf("\nDesconto da promocao aplicado para Camisinha!\n");
-                            }
-
-                            if (promocao == 3 && lactopurga > 0) {
-                                total = total - (lactopurga * 10.00 * 0.50);
-                                printf("\nDesconto da promocao aplicado para Lactopurga!\n");
-                            }
-
-                            if (promocao == 4 && antiaids > 0) {
-                                total = total - (antiaids * 15.00 * 0.20);
-                                printf("\nDesconto da promocao aplicado para Anti AIDS!\n");
-                            }
-
-                            if (promocao == 5 && coca > 0) {
-                                total = total - (coca * 50.00 * 0.10);
-                                printf("\nDesconto da promocao aplicado para Extrato de coca!\n");
-                            }
-
-                            if (promocao == 6 && shampoo > 0) {
-                                total = total - (shampoo * 15.00 * 0.05);
-                                printf("\nDesconto da promocao aplicado para Shampoo!\n");
-                            }
-
-                            if (promocao == 7 && DIU > 0) {
-                                total = total - (DIU * 50.00 * 0.05);
-                                printf("\nDesconto da promocao aplicado para DIU!\n");
-                            }
+            total = (dipirona * 8.50) + 
+                    (vitamina * 20.00) + 
+                    (sabonete * 4.00) + 
+                    (shampoo * 15.00) + 
+                    (camisinha * 5.00) + 
+                    (tadala * 25.00) + 
+                    (DIU * 50.00) + 
+                    (antiaids * 15.00) + 
+                    (lactopurga * 10.00) + 
+                    (coca * 50.00);
+                    if (promocao == 1 && tadala > 0) {
+                        total = total - (tadala * 25.00 * 0.50);
+                        printf("\nDesconto da promocao aplicado para Tadalafila!\n");
+                    }
+                    if (promocao == 2 && camisinha > 0) {
+                        total = total - (camisinha * 5.00 * 0.50);
+                        printf("\nDesconto da promocao aplicado para Camisinha!\n");
+                    }
+                    if (promocao == 3 && lactopurga > 0) {
+                        total = total - (lactopurga * 10.00 * 0.50);
+                        printf("\nDesconto da promocao aplicado para Lactopurga!\n");
+                    }
+                    if (promocao == 4 && antiaids > 0) {
+                        total = total - (antiaids * 15.00 * 0.20);
+                        printf("\nDesconto da promocao aplicado para Anti AIDS!\n");
+                    }
+                    if (promocao == 5 && coca > 0) {
+                        total = total - (coca * 50.00 * 0.10);
+                        printf("\nDesconto da promocao aplicado para Extrato de coca!\n");
+                    }
+                    if (promocao == 6 && shampoo > 0) {
+                        total = total - (shampoo * 15.00 * 0.05);
+                        printf("\nDesconto da promocao aplicado para Shampoo!\n");
+                    }
+                    if (promocao == 7 && DIU > 0) {
+                        total = total - (DIU * 50.00 * 0.05);
+                        printf("\nDesconto da promocao aplicado para DIU!\n");
+                    }
             if (dipirona == 0 && vitamina == 0 && sabonete == 0 && shampoo == 0 && camisinha == 0 && tadala == 0 && DIU == 0 && antiaids == 0 && lactopurga == 0 && coca == 0) {
                     printf("Seu carrinho esta vazio.\n");
             } else {
