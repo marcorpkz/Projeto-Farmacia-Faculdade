@@ -23,21 +23,21 @@ int main() {
     printf("\nCadastro feito com sucesso!\n");
 
     
+    srand(time(NULL));
+    promocao = (rand() % 7) + 1;
     do {
-        srand(time(NULL));
-        promocao = (rand() % 7) + 1;
 
         printf("\n===== FARMACIA =====\n");
         if (promocao > 0) {
                 if (promocao == 1) {printf("\nPROMOCAO: Tadalafila a preco de banana 50%% OFF\n");}
-                else if (promocao == 2) {printf("\nPROMOCAO: Furo no estoque, Camisinha leve 2 pague 1\n");}
+                else if (promocao == 2) {printf("\nPROMOCAO: Furo no estoque, Camisinha 50%% OFF\n");}
                 else if (promocao == 3) {printf("\nPROMOCAO: Mantenha suas pregas, Lactopurga pela metade do preço\n");}
                 else if (promocao == 4) {printf("\nPROMOCAO: Sexo no pelo, Anti AIDS 20%% OFF\n");}
                 else if (promocao == 5) {printf("\nPROMOCAO: Evite um acidente na BR, Extrato de coca 10%% OFF\n");}
                 else if (promocao == 6) {printf("\nPROMOCAO: Elimine seus piolhos, Shampoo 5%% OFF\n");}
                 else if (promocao == 7) {printf("\nPROMOCAO: Evite incomodo, use DIU 5%% OFF\n");}
             }
-        printf("1 - Ver carrinho\n2 - Loja\n3 - Ver cadastro\n4 - Sair");
+        printf("\n1 - Ver carrinho\n2 - Loja\n3 - Ver cadastro\n4 - Sair");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
@@ -49,23 +49,66 @@ int main() {
             printf("\nVolte sempre, %s!\n", nome);
             break;
         }
-
+        
         if (opcao == 1) {
-            total = (dipirona * 8.50) + (vitamina * 20.00) + (sabonete * 4.00) + (shampoo * 15.00) + (camisinha * 5.00) + (tadala * 25.00) + (DIU * 50.00) + (antiaids * 15.00) + (lactopurga * 10.00) + (coca * 50.00);
             printf("\n===== CARRINHO =====\n");
-            if (dipirona == 0 && vitamina == 0 && sabonete == 0 && shampoo == 0) {
+            total = total = (dipirona * 8.50) + 
+                            (vitamina * 20.00) + 
+                            (sabonete * 4.00) + 
+                            (shampoo * 15.00) + 
+                            (camisinha * 5.00) + 
+                            (tadala * 25.00) + 
+                            (DIU * 50.00) + 
+                            (antiaids * 15.00) + 
+                            (lactopurga * 10.00) + 
+                            (coca * 50.00);
+                            if (promocao == 1 && tadala > 0) {
+                                total = total - (tadala * 25.00 * 0.50);
+                                printf("\nDesconto da promocao aplicado para Tadalafila!\n");
+                            }
+
+                            if (promocao == 2 && camisinha > 0) {
+                                total = total - (camisinha * 5.00 * 0.50);
+                                printf("\nDesconto da promocao aplicado para Camisinha!\n");
+                            }
+
+                            if (promocao == 3 && lactopurga > 0) {
+                                total = total - (lactopurga * 10.00 * 0.50);
+                                printf("\nDesconto da promocao aplicado para Lactopurga!\n");
+                            }
+
+                            if (promocao == 4 && antiaids > 0) {
+                                total = total - (antiaids * 15.00 * 0.20);
+                                printf("\nDesconto da promocao aplicado para Anti AIDS!\n");
+                            }
+
+                            if (promocao == 5 && coca > 0) {
+                                total = total - (coca * 50.00 * 0.10);
+                                printf("\nDesconto da promocao aplicado para Extrato de coca!\n");
+                            }
+
+                            if (promocao == 6 && shampoo > 0) {
+                                total = total - (shampoo * 15.00 * 0.05);
+                                printf("\nDesconto da promocao aplicado para Shampoo!\n");
+                            }
+
+                            if (promocao == 7 && DIU > 0) {
+                                total = total - (DIU * 50.00 * 0.05);
+                                printf("\nDesconto da promocao aplicado para DIU!\n");
+                            }
+            if (dipirona == 0 && vitamina == 0 && sabonete == 0 && shampoo == 0 && camisinha == 0 && tadala == 0 && DIU == 0 && antiaids == 0 && lactopurga == 0 && coca == 0) {
                     printf("Seu carrinho esta vazio.\n");
             } else {
-                    if (dipirona > 0) printf("Dipirona (GENERICO): %d unidade(s) - R$ %.2f\n", dipirona, dipirona * 8.50);
-                    if (vitamina > 0) printf("Vitamina C (GENERICO): %d unidade(s) - R$ %.2f\n", vitamina, vitamina * 20.00);
-                    if (sabonete > 0) printf("Sabonete: %d unidade(s) - R$ %.2f\n", sabonete, sabonete * 4.00);
-                    if (shampoo > 0) printf("Shampoo: %d unidade(s) - R$ %.2f\n", shampoo, shampoo * 15.00);
-                    if (camisinha > 0) printf("Camisinha: %d unidade(s) - R$ %.2f\n", camisinha, camisinha * 5.00);
-                    if (tadala > 0) printf("Tadalafila (MANIPULADO): %d unidade(s) - R$ %.2f\n", tadala, tadala * 25.00);
-                    if (DIU > 0) printf("DIU: %d unidade(s) - R$ %.2f\n", DIU, DIU * 50.00);
-                    if (antiaids > 0) printf("Anti AIDS (MANIPULADO): %d unidade(s) - R$ %.2f\n", antiaids, antiaids * 15.00);
+                    if (dipirona > 0) printf("\nDipirona (GENERICO): %d unidade(s) - R$ %.2f\n", dipirona, dipirona * 8.50);
+                    if (vitamina > 0) printf("\nVitamina C (GENERICO): %d unidade(s) - R$ %.2f\n", vitamina, vitamina * 20.00);
+                    if (sabonete > 0) printf("\nSabonete: %d unidade(s) - R$ %.2f\n", sabonete, sabonete * 4.00);
+                    if (shampoo > 0) printf("\nShampoo: %d unidade(s) - R$ %.2f\n", shampoo, shampoo * 15.00);
+                    if (camisinha > 0) printf("\nCamisinha: %d unidade(s) - R$ %.2f\n", camisinha, camisinha * 5.00);
+                    if (tadala > 0) printf("\nTadalafila (MANIPULADO): %d unidade(s) - R$ %.2f\n", tadala, tadala * 25.00);
+                    if (DIU > 0) printf("\nDIU: %d unidade(s) - R$ %.2f\n", DIU, DIU * 50.00);
+                    if (antiaids > 0) printf("\nAnti AIDS (MANIPULADO): %d unidade(s) - R$ %.2f\n", antiaids, antiaids * 15.00);
                     if (lactopurga > 0) printf("Lactopurga: %d unidade(s) - R$ %.2f\n", lactopurga, lactopurga * 10.00);
-                    if (coca > 0) printf("Extrato de coca (MANIPULADO): %d unidade(s) - R$ %.2f\n", coca, coca * 50.00);
+                    if (coca > 0) printf("\nExtrato de coca (MANIPULADO): %d unidade(s) - R$ %.2f\n", coca, coca * 50.00);
                     printf("\nTotal da compra: R$ %.2f\n", total);
                     printf("\nDigite 1 para finalizar compra ou 0 para voltar: ");
                     scanf("%d", &opcaocarrinho);
