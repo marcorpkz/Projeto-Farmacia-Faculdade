@@ -27,7 +27,7 @@ int main() {
     promocao = (rand() % 7) + 1;
     do {
 
-        printf("\n===== FARMACIA =====\n");
+        printf("\n===== FARMACIA ORELHA =====\n");
         if (promocao > 0) {
                 if (promocao == 1) {printf("\nPROMOCAO: Tadalafila a preco de banana 50%% OFF\n");}
                 else if (promocao == 2) {printf("\nPROMOCAO: Furo no estoque, Camisinha 50%% OFF\n");}
